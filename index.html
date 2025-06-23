@@ -1,0 +1,336 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>YxuanAr</title>
+
+    <meta name="author" content="YxuanAr">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="images/favicon/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    
+  </head>
+
+  <body>
+    <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+      <tr style="padding:0px">
+        <td style="padding:0px">
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            <tr style="padding:0px">
+              <td style="padding:2.5%;width:63%;vertical-align:middle">
+                <p class="name" style="text-align: center;">
+                  YxuanAr
+                </p>
+                <p>
+		【此处填写您的个人简介，例如：我正在XX大学攻读博士学位，导师是XXX。我的研究方向是...】
+                </p>
+                <p style="text-align:center">
+                  <a href="mailto:【您的邮箱】">Email</a> &nbsp;/&nbsp;
+                  <a href="data/【您的CV文件名】.pdf">CV</a> &nbsp;/&nbsp;
+                  <a href="data/【您的Bio文件名】.txt">Bio</a> &nbsp;/&nbsp;
+                  <a href="【您的Google Scholar链接】">Scholar</a> &nbsp;/&nbsp;
+                  <a href="【您的Twitter链接】">Twitter</a> &nbsp;/&nbsp;
+                  <a href="【您的Bluesky链接】">Bluesky</a> &nbsp;/&nbsp;
+                  <a href="https://github.com/YxuanAr">Github</a>
+                </p>
+              </td>
+              <td style="padding:2.5%;width:37%;max-width:37%">
+                <a href="images/【您的照片文件名】.jpg"><img style="width:100%;max-width:100%;object-fit: cover; border-radius: 50%;" alt="profile photo" src="images/【您的照片文件名】.jpg" class="hoverZoomLink"></a>
+              </td>
+            </tr>
+          </tbody></table>
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+              <tr>
+              <td style="padding:16px;width:100%;vertical-align:middle">
+                <h2>Research</h2>
+                <p>
+                  I'm interested in computer vision, deep learning, generative AI, and image processing. Most of my research is about inferring the physical world (shape, motion, color, light, etc) from images, usually with radiance fields. Some papers are <span class="highlight">highlighted</span>.
+                </p>
+              </td>
+            </tr>
+          </tbody></table>
+          <table style="width:100%;border:0px;border-spacing:0px 10px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+
+
+    <tr onmouseout="bolt3d_stop()" onmouseover="bolt3d_start()"  bgcolor="#ffffd0">
+      <td style="padding:16px;width:20%;vertical-align:middle">
+        <div class="one">
+          <div class="two" id='bolt3d_image'><video  width=100% height=100% muted autoplay loop>
+          <source src="images/bolt3d.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+
+          </video></div>
+          <img src='images/bolt3d.jpg' width="160">
+        </div>
+        <script type="text/javascript">
+          function bolt3d_start() {
+            document.getElementById('bolt3d_image').style.opacity = "1";
+          }
+
+          function bolt3d_stop() {
+            document.getElementById('bolt3d_image').style.opacity = "0";
+          }
+          bolt3d_stop()
+        </script>
+      </td>
+      <td style="padding:8px;width:80%;vertical-align:middle">
+        <a href="https://szymanowiczs.github.io/bolt3d">
+          <span class="papertitle">Bolt3D: Generating 3D Scenes in Seconds</span>
+        </a>
+        <br>
+        <a href="https://szymanowiczs.github.io/">Stanislaw Szymanowicz</a>,
+        <a href="https://jasonyzhang.com">Jason Y. Zhang</a>,
+        <a href="https://pratulsrinivasan.github.io">Pratul Srinivasan</a>,
+        <a href="https://ruiqigao.github.io">Ruiqi Gao</a>,
+        <a href="https://github.com/ArthurBrussee">Arthur Brussee</a>,
+        <a href="https://holynski.org">Aleksander Holynski</a>,
+        <a href="https://ricardomartinbrualla.com">Ricardo Martin-Brualla</a>,
+		<strong>Jonathan T. Barron</strong>,
+        <a href="https://henzler.github.io">Philipp Henzler</a>
+        <br>
+        <em>arXiv</em>, 2025
+        <br>
+        <a href="https://szymanowiczs.github.io/bolt3d">project page</a>
+        /
+        <a href="https://szymanowiczs.github.io/bolt3d">arXiv</a>
+        <p></p>
+        <p>
+		By training a latent diffusion model to directly output 3D Gaussians we enable fast (~6 seconds on a single GPU) feed-forward 3D scene generation.
+        </p>
+      </td>
+    </tr>
+
+    <tr onmouseout="cat4d_stop()" onmouseover="cat4d_start()" bgcolor="#ffffd0">
+      <td style="padding:16px;width:20%;vertical-align:middle">
+        <div class="one">
+          <div class="two" id='cat4d_image'><video  width=100% height=100% muted autoplay loop>
+          <source src="images/cat4d.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+          </video></div>
+          <img src='images/cat4d.jpg' width="160">
+        </div>
+        <script type="text/javascript">
+          function cat4d_start() {
+            document.getElementById('cat4d_image').style.opacity = "1";
+          }
+
+          function cat4d_stop() {
+            document.getElementById('cat4d_image').style.opacity = "0";
+          }
+          cat4d_stop()
+        </script>
+      </td>
+      <td style="padding:8px;width:80%;vertical-align:middle">
+        <a href="https://cat-4d.github.io/">
+			<span class="papertitle">CAT4D: Create Anything in 4D with Multi-View Video Diffusion Models
+</span>
+        </a>
+        <br>
+				<a href="https://www.cs.columbia.edu/~rundi/">Rundi Wu</a>,
+				<a href="https://ruiqigao.github.io/">Ruiqi Gao</a>,
+				<a href="https://poolio.github.io/">Ben Poole</a>,
+				<a href="https://alextrevithick.github.io/">Alex Trevithick</a>,
+				<a href="https://www.cs.columbia.edu/~cxz/index.htm/">Changxi Zheng</a>,
+				<strong>Jonathan T. Barron</strong>,
+				<a href="https://holynski.org/">Aleksander Holynski</a>
+        <br>
+        <em>CVPR</em>, 2025 &nbsp <font color="red"><strong>(Oral Presentation)</strong></font>
+        <br>
+        <a href="https://cat-4d.github.io/">project page</a>
+        /
+        <a href="https://arxiv.org/abs/2411.18613">arXiv</a>
+        <p></p>
+        <p>
+				An approach for turning a video into a 4D radiance field that can be rendered in real-time. When combined with a text-to-video model, this enables text-to-4D.
+        </p>
+      </td>
+    </tr>
+	
+
+    <tr onmouseout="r2r_stop()" onmouseover="r2r_start()">
+      <td style="padding:16px;width:20%;vertical-align:middle">
+        <div class="one">
+          <div class="two" id='r2r_image'><video  width=100% muted autoplay loop>
+          <source src="images/r2r.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+          </video></div>
+          <img src='images/r2r.jpg' width=100%>
+        </div>
+        <script type="text/javascript">
+          function r2r_start() {
+            document.getElementById('r2r_image').style.opacity = "1";
+          }
+
+          function r2r_stop() {
+            document.getElementById('r2r_image').style.opacity = "0";
+          }
+          r2r_stop()
+        </script>
+      </td>
+      <td style="padding:8px;width:80%;vertical-align:middle">
+        <a href="https://relight-to-reconstruct.github.io/">
+          <span class="papertitle">Generative Multiview Relighting for
+3D Reconstruction under Extreme Illumination Variation</span>
+        </a>
+        <br>
+        <a href="https://hadizayer.github.io/">Hadi Alzayer</a>,
+        <a href="https://henzler.github.io/">Philipp Henzler</a>,
+				<strong>Jonathan T. Barron</strong>, 
+        <a href="https://jbhuang0604.github.io/">Jia-Bin Huang</a>,
+        <a href="https://pratulsrinivasan.github.io/">Pratul P. Srinivasan</a>, 
+        <a href="https://dorverbin.github.io/">Dor Verbin</a>
+        <br>
+        <em>CVPR</em>, 2025 &nbsp <font color=#FF8080><strong>(Highlight)</strong></font>
+        <br>
+        <a href="https://relight-to-reconstruct.github.io/">project page</a>
+        /
+        <a href="https://arxiv.org/abs/2412.15211">arXiv</a>
+        <p></p>
+        <p>
+				Images taken under extreme illumination variation can be made consistent with diffusion, and this enables high-quality 3D reconstruction.
+                </p>
+              </td>
+            </tr>
+
+
+
+            <tr>
+              <td style="padding:16px;width:20%;vertical-align:middle">
+                <img src="images/bd_promo.jpg" alt="blind-date" width="160" height="160">
+              </td>
+              <td style="padding:8px;width:80%;vertical-align:middle">
+                <a href="https://drive.google.com/file/d/1PQjzKgFcrAesMIDJr-WDlCwuGUxZJZwO/view?usp=sharing">
+                  <span class="papertitle">Blind Date: Using Proper Motions to Determine the Ages of Historical Images</span>
+                </a>
+                <br>
+                <strong>Jonathan T. Barron</strong>, <a href="http://cosmo.nyu.edu/hogg/">David W. Hogg</a>, <a href="http://www.astro.princeton.edu/~dstn/">Dustin Lang</a>, <a href="http://cs.nyu.edu/~roweis/">Sam Roweis</a>
+                <br>
+                <em>The Astronomical Journal</em>, 136, 2008
+                <p>Using the relative motions of stars we can accurately estimate the date of origin of historical astronomical images.</p>
+              </td>
+            </tr>
+
+            <tr>
+              <td style="padding:16px;width:20%;vertical-align:middle">
+                <img src="images/clean_promo.jpg" alt="clean-usnob" width="160" height="160">
+              </td>
+              <td style="padding:8px;width:80%;vertical-align:middle">
+                <a href="https://drive.google.com/file/d/1YvRx-4hrZoCk-nl6OgVJZlHAqOiN5hWq/view?usp=sharing">
+                  <span class="papertitle">Cleaning the USNO-B Catalog Through Automatic Detection of Optical Artifacts</span>
+                </a>
+                <br>
+                <strong>Jonathan T. Barron</strong>, <a href="http://stumm.ca/">Christopher Stumm</a>, <a href="http://cosmo.nyu.edu/hogg/">David W. Hogg</a>, <a href="http://www.astro.princeton.edu/~dstn/">Dustin Lang</a>, <a href="http://cs.nyu.edu/~roweis/">Sam Roweis</a>
+                <br>
+                <em>The Astronomical Journal</em>, 135, 2008
+                <p>We use computer vision techniques to identify and remove diffraction spikes and reflection halos in the USNO-B Catalog.</p>
+                <p>In use at <a href="http://www.astrometry.net">Astrometry.net</a></p>
+              </td>
+            </tr>
+
+          </tbody></table>
+
+          
+					<table style="width:100%; margin:0 auto; border:0; border-spacing:0; padding:16px;"><tbody>
+            <tr>
+              <td>
+                <h2>Miscellanea</h2>
+              </td>
+            </tr>
+          </tbody></table>
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            
+           
+            <tr>
+              <td align="center" style="padding:16px;width:20%;vertical-align:middle">
+						     <div class="colored-box" style="background-color: #fcb97d;">
+								 <h2>Micropapers</h2>
+								 </div>
+              </td>
+              <td style="padding:8px;width:80%;vertical-align:middle">
+                <a href="https://arxiv.org/abs/2112.11687">Squareplus: A Softplus-Like Algebraic Rectifier</a>
+                <br>
+                <a href="https://arxiv.org/abs/2010.09714">A Convenient Generalization of Schlick's Bias and Gain Functions</a>
+                <br>
+                <a href="https://arxiv.org/abs/1704.07483">Continuously Differentiable Exponential Linear Units</a>
+                <br>
+                <a href="https://jonbarron.info/data/cvpr2023_llm_workshop_annotated.pdf">Scholars & Big Models: How Can Academics Adapt?</a>
+              </td>
+            </tr>
+
+
+            <tr>
+              <td align="center" style="padding:16px;width:20%;vertical-align:middle">
+						     <div class="colored-box" style="background-color: #aaba9e;">
+								 <h2>Recorded Talks</h2>
+								 </div>
+              </td>
+              <td style="padding:8px;width:80%;vertical-align:center">
+                <a href="https://www.youtube.com/watch?v=hFlF33JZbA0">Radiance Fields and the Future of Generative Media, 2025</a><br>				  
+                <a href="https://www.youtube.com/watch?v=h9vq_65eDas">View Dependent Podcast, 2024</a><br>
+                <a href="https://www.youtube.com/watch?v=4tDhYsFuEqo">Bay Area Robotics Symposium, 2023
+</a><br>
+                <a href="https://youtu.be/TvWkwDYtBP4?t=7604">EGSR Keynote, 2021</a><br>
+				<a href="https://www.youtube.com/watch?v=nRyOzHpcr4Q">TUM AI Lecture Series, 2020</a><br>
+				<a href="https://www.youtube.com/watch?v=HfJpQCBTqZs">Vision & Graphics Seminar at MIT, 2020</a>
+              </td>
+            </tr>
+
+            <tr>
+              <td align="center" style="padding:16px;width:20%;vertical-align:middle">
+						     <div class="colored-box" style="background-color: #c6b89e;">
+								 <h2>Academic Service</h2>
+								 </div>
+              </td>
+              <td style="padding:8px;width:80%;vertical-align:center">
+                <a href="https://iccv.thecvf.com/">Lead Area Chair, ICCV 2025</a>
+                <br>
+                <a href="https://cvpr.thecvf.com/Conferences/2025/Organizers">Lead Area Chair, CVPR 2025</a>
+                <br>
+                <a href="https://cvpr.thecvf.com/Conferences/2024/Organizers">Area Chair, CVPR 2024</a>
+                <br>
+                <a href="https://cvpr2023.thecvf.com/Conferences/2023/Organizers">Demo Chair, CVPR 2023</a>
+                <br>
+                <a href="https://cvpr2022.thecvf.com/area-chairs">Area Chair, CVPR 2022</a>
+                <br>
+                <a href="http://cvpr2021.thecvf.com/area-chairs">Area Chair & Award Committee Member, CVPR 2021</a>
+                <br>
+                <a href="http://cvpr2019.thecvf.com/area_chairs">Area Chair, CVPR 2019</a>
+                <br>
+                <a href="http://cvpr2018.thecvf.com/organizers/area_chairs">Area Chair, CVPR 2018</a>
+              </td>
+            </tr>
+						
+						
+           
+            <tr>
+              <td align="center" style="padding:16px;width:20%;vertical-align:middle">
+						     <div class="colored-box" style="background-color: #edd892;">
+								 <h2>Teaching</h2>
+								 </div>
+              </td>
+              <td style="padding:8px;width:80%;vertical-align:center">
+                <a href="http://inst.eecs.berkeley.edu/~cs188/sp11/announcements.html">Graduate Student Instructor, CS188 Spring 2011</a>
+                <br>
+                <a href="http://inst.eecs.berkeley.edu/~cs188/fa10/announcements.html">Graduate Student Instructor, CS188 Fall 2010</a>
+                <br>
+                <a href="http://aima.cs.berkeley.edu/">Figures, "Artificial Intelligence: A Modern Approach", 3rd Edition</a>
+              </td>
+            </tr>
+            
+          </tbody></table>
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            <tr>
+              <td style="padding:0px">
+                <br>
+                <p style="text-align:right;font-size:small;">
+                  Feel free to steal this website's <a href="https://github.com/jonbarron/jonbarron_website">source code</a>. <strong>Do not</strong> scrape the HTML from this page itself, as it includes analytics tags that you do not want on your own website &mdash; use the github code instead. Also, consider using <a href="https://leonidk.com/">Leonid Keselman</a>'s <a href="https://github.com/leonidk/new_website">Jekyll fork</a> of this page.
+                </p>
+              </td>
+            </tr>
+          </tbody></table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
