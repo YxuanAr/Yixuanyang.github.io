@@ -9,28 +9,34 @@
     <link rel="stylesheet" type="text/css" href="stylesheet.css">
     <style>
       .photo-gallery {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        display: flex;
+        flex-wrap: wrap;
         gap: 20px;
-        padding: 20px 0;
+        padding: 20px;
+        max-width: 1600px;
+        margin: 0 auto;
+        justify-content: center;
       }
       
       .photo-item {
         position: relative;
         overflow: hidden;
         border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        transition: transform 0.3s ease;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        background: #fff;
       }
       
       .photo-item:hover {
-        transform: scale(1.02);
+        transform: scale(1.03);
+        box-shadow: 0 8px 25px rgba(0,0,0,0.25);
       }
       
       .photo-item img {
-        width: 100%;
-        height: auto;
         display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
       }
       
       .photo-caption {
@@ -38,9 +44,9 @@
         bottom: 0;
         left: 0;
         right: 0;
-        background: rgba(0,0,0,0.7);
+        background: rgba(0,0,0,0.8);
         color: white;
-        padding: 10px;
+        padding: 12px;
         font-size: 14px;
         opacity: 0;
         transition: opacity 0.3s ease;
@@ -50,31 +56,58 @@
         opacity: 1;
       }
       
-      .large-photo {
-        grid-column: span 2;
+      /* 根据照片宽高比动态调整相框 */
+      /* 横版照片 (宽高比 > 1.3) */
+      .photo-landscape {
+        width: 500px;
+        height: 375px;
       }
       
-      .medium-photo {
-        grid-column: span 1;
+      /* 标准照片 (宽高比 0.8-1.3) */
+      .photo-standard {
+        width: 450px;
+        height: 450px;
       }
       
-      .small-photo {
-        grid-column: span 1;
+      /* 竖版照片 (宽高比 < 0.8) */
+      .photo-portrait {
+        width: 375px;
+        height: 500px;
+      }
+      
+      /* 全景照片 (宽高比 > 2) */
+      .photo-panorama {
+        width: 750px;
+        height: 312px;
+      }
+      
+      /* 超宽照片 (宽高比 > 3) */
+      .photo-ultra-wide {
+        width: 900px;
+        height: 250px;
+      }
+      
+      /* 超竖照片 (宽高比 < 0.6) */
+      .photo-ultra-tall {
+        width: 312px;
+        height: 562px;
       }
       
       @media (max-width: 768px) {
         .photo-gallery {
-          grid-template-columns: 1fr;
+          padding: 10px;
+          gap: 10px;
         }
-        .large-photo, .medium-photo, .small-photo {
-          grid-column: span 1;
+        .photo-landscape, .photo-standard, .photo-portrait, .photo-panorama, .photo-ultra-wide, .photo-ultra-tall {
+          width: 100%;
+          height: 250px;
         }
       }
     </style>
   </head>
 
   <body>
-    <table style="width:100%;max-width:1200px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+    <table style="width:100%;max-width:1600px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
       <tr style="padding:0px">
         <td style="padding:0px">
           <!-- Header -->
@@ -94,48 +127,172 @@
           
           <!-- Photo Gallery -->
           <div class="photo-gallery">
-            <!-- Large Photo -->
-            <div class="photo-item large-photo">
-              <img src="images/photography/photo1.jpg" alt="Photography 1">
-              <div class="photo-caption">Sunset at the Beach - 2024</div>
+            <!-- 全景照片 (3722x839 = 4.44:1) -->
+            <div class="photo-item photo-ultra-wide">
+              <img src="images/photography/organized/medium/medium_20250624_008_3722x839.jpg" alt="全景照片">
+              <div class="photo-caption">全景照片 - 2025年6月</div>
             </div>
             
-            <!-- Medium Photos -->
-            <div class="photo-item medium-photo">
-              <img src="images/photography/photo2.jpg" alt="Photography 2">
-              <div class="photo-caption">City Lights - 2024</div>
+            <!-- 横版照片 (1178x784 = 1.50:1) -->
+            <div class="photo-item photo-landscape">
+              <img src="images/photography/organized/small/small_20250624_001_1178x784.jpg" alt="摄影作品">
+              <div class="photo-caption">作品001 - 2025年6月</div>
             </div>
             
-            <div class="photo-item medium-photo">
-              <img src="images/photography/photo3.jpg" alt="Photography 3">
-              <div class="photo-caption">Mountain View - 2024</div>
+            <!-- 竖版照片 (805x1210 = 0.67:1) -->
+            <div class="photo-item photo-portrait">
+              <img src="images/photography/organized/small/small_20250624_003_805x1210.jpg" alt="摄影作品">
+              <div class="photo-caption">作品003 - 2025年6月</div>
             </div>
             
-            <!-- Small Photos -->
-            <div class="photo-item small-photo">
-              <img src="images/photography/photo4.jpg" alt="Photography 4">
-              <div class="photo-caption">Street Photography - 2024</div>
+            <!-- 横版照片 (1073x805 = 1.33:1) -->
+            <div class="photo-item photo-landscape">
+              <img src="images/photography/organized/small/small_20250528_009_1073x805.jpg" alt="摄影作品">
+              <div class="photo-caption">作品009 - 2025年5月</div>
             </div>
             
-            <div class="photo-item small-photo">
-              <img src="images/photography/photo5.jpg" alt="Photography 5">
-              <div class="photo-caption">Nature Close-up - 2024</div>
+            <!-- 横版照片 (787x525 = 1.50:1) -->
+            <div class="photo-item photo-landscape">
+              <img src="images/photography/organized/small/small_20250624_002_787x525.jpg" alt="摄影作品">
+              <div class="photo-caption">作品002 - 2025年6月</div>
             </div>
             
-            <div class="photo-item small-photo">
-              <img src="images/photography/photo6.jpg" alt="Photography 6">
-              <div class="photo-caption">Architecture - 2024</div>
+            <!-- 横版照片 (1210x805 = 1.50:1) -->
+            <div class="photo-item photo-landscape">
+              <img src="images/photography/organized/small/small_20250624_007_1210x805.jpg" alt="摄影作品">
+              <div class="photo-caption">作品007 - 2025年6月</div>
             </div>
             
-            <!-- Mixed Layout -->
-            <div class="photo-item large-photo">
-              <img src="images/photography/photo7.jpg" alt="Photography 7">
-              <div class="photo-caption">Landscape Panorama - 2024</div>
+            <!-- 横版照片 (1210x805 = 1.50:1) -->
+            <div class="photo-item photo-landscape">
+              <img src="images/photography/organized/small/small_20250527_010_1210x805.jpg" alt="摄影作品">
+              <div class="photo-caption">作品010 - 2025年5月</div>
             </div>
             
-            <div class="photo-item small-photo">
-              <img src="images/photography/photo8.jpg" alt="Photography 8">
-              <div class="photo-caption">Portrait - 2024</div>
+            <!-- 竖版照片 (805x1073 = 0.75:1) -->
+            <div class="photo-item photo-portrait">
+              <img src="images/photography/organized/small/small_20250525_012_805x1073.jpg" alt="摄影作品">
+              <div class="photo-caption">作品012 - 2025年5月</div>
+            </div>
+            
+            <!-- 横版照片 (1188x668 = 1.78:1) -->
+            <div class="photo-item photo-landscape">
+              <img src="images/photography/organized/small/small_20250624_004_1188x668.jpg" alt="摄影作品">
+              <div class="photo-caption">作品004 - 2025年6月</div>
+            </div>
+            
+            <!-- 竖版照片 (747x996 = 0.75:1) -->
+            <div class="photo-item photo-portrait">
+              <img src="images/photography/organized/small/small_20250624_005_747x996.jpg" alt="摄影作品">
+              <div class="photo-caption">作品005 - 2025年6月</div>
+            </div>
+            
+            <!-- 横版照片 (1210x805 = 1.50:1) -->
+            <div class="photo-item photo-landscape">
+              <img src="images/photography/organized/small/small_20250526_011_1210x805.jpg" alt="摄影作品">
+              <div class="photo-caption">作品011 - 2025年5月</div>
+            </div>
+            
+            <!-- 横版照片 (1179x785 = 1.50:1) -->
+            <div class="photo-item photo-landscape">
+              <img src="images/photography/organized/small/small_20250624_006_1179x785.jpg" alt="摄影作品">
+              <div class="photo-caption">作品006 - 2025年6月</div>
+            </div>
+            
+            <!-- 竖版照片 (681x908 = 0.75:1) -->
+            <div class="photo-item photo-portrait">
+              <img src="images/photography/organized/small/small_20220728_026_681x908.jpg" alt="摄影作品">
+              <div class="photo-caption">作品026 - 2022年7月</div>
+            </div>
+            
+            <!-- 横版照片 (1186x789 = 1.50:1) -->
+            <div class="photo-item photo-landscape">
+              <img src="images/photography/organized/small/small_20250315_014_1186x789.jpg" alt="摄影作品">
+              <div class="photo-caption">作品014 - 2025年3月</div>
+            </div>
+            
+            <!-- 横版照片 (1014x761 = 1.33:1) -->
+            <div class="photo-item photo-landscape">
+              <img src="images/photography/organized/small/small_20250524_013_1014x761.jpg" alt="摄影作品">
+              <div class="photo-caption">作品013 - 2025年5月</div>
+            </div>
+            
+            <!-- 横版照片 (1210x805 = 1.50:1) -->
+            <div class="photo-item photo-landscape">
+              <img src="images/photography/organized/small/small_20250126_016_1210x805.jpg" alt="摄影作品">
+              <div class="photo-caption">作品016 - 2025年1月</div>
+            </div>
+            
+            <!-- 横版照片 (1207x803 = 1.50:1) -->
+            <div class="photo-item photo-landscape">
+              <img src="images/photography/organized/small/small_20250124_017_1207x803.jpg" alt="摄影作品">
+              <div class="photo-caption">作品017 - 2025年1月</div>
+            </div>
+            
+            <!-- 竖版照片 (786x1181 = 0.67:1) -->
+            <div class="photo-item photo-portrait">
+              <img src="images/photography/organized/small/small_20220305_027_786x1181.jpg" alt="摄影作品">
+              <div class="photo-caption">作品027 - 2022年3月</div>
+            </div>
+            
+            <!-- 横版照片 (1166x656 = 1.78:1) -->
+            <div class="photo-item photo-landscape">
+              <img src="images/photography/organized/small/small_20241115_018_1166x656.jpg" alt="摄影作品">
+              <div class="photo-caption">作品018 - 2024年11月</div>
+            </div>
+            
+            <!-- 横版照片 (1164x774 = 1.50:1) -->
+            <div class="photo-item photo-landscape">
+              <img src="images/photography/organized/small/small_20241113_019_1164x774.jpg" alt="摄影作品">
+              <div class="photo-caption">作品019 - 2024年11月</div>
+            </div>
+            
+            <!-- 横版照片 (1210x805 = 1.50:1) -->
+            <div class="photo-item photo-landscape">
+              <img src="images/photography/organized/small/small_20230822_020_1210x805.jpg" alt="摄影作品">
+              <div class="photo-caption">作品020 - 2023年8月</div>
+            </div>
+            
+            <!-- 横版照片 (1172x780 = 1.50:1) -->
+            <div class="photo-item photo-landscape">
+              <img src="images/photography/organized/small/small_20221224_021_1172x780.jpg" alt="摄影作品">
+              <div class="photo-caption">作品021 - 2022年12月</div>
+            </div>
+            
+            <!-- 竖版照片 (776x1166 = 0.67:1) -->
+            <div class="photo-item photo-portrait">
+              <img src="images/photography/organized/small/small_20220223_028_776x1166.jpg" alt="摄影作品">
+              <div class="photo-caption">作品028 - 2022年2月</div>
+            </div>
+            
+            <!-- 全景照片 (2085x742 = 2.81:1) -->
+            <div class="photo-item photo-panorama">
+              <img src="images/photography/organized/medium/medium_20221222_022_2085x742.jpg" alt="全景照片">
+              <div class="photo-caption">全景照片 - 2022年12月</div>
+            </div>
+            
+            <!-- 横版照片 (1179x784 = 1.50:1) -->
+            <div class="photo-item photo-landscape">
+              <img src="images/photography/organized/small/small_20221220_023_1179x784.jpg" alt="摄影作品">
+              <div class="photo-caption">作品023 - 2022年12月</div>
+            </div>
+            
+            <!-- 横版照片 (1210x805 = 1.50:1) -->
+            <div class="photo-item photo-landscape">
+              <img src="images/photography/organized/small/small_20220729_024_1210x805.jpg" alt="摄影作品">
+              <div class="photo-caption">作品024 - 2022年7月</div>
+            </div>
+            
+            <!-- 横版照片 (1197x748 = 1.60:1) -->
+            <div class="photo-item photo-landscape">
+              <img src="images/photography/organized/small/small_20220728_025_1197x748.jpg" alt="摄影作品">
+              <div class="photo-caption">作品025 - 2022年7月</div>
+            </div>
+            
+            <!-- 横版照片 (1210x805 = 1.50:1) -->
+            <div class="photo-item photo-landscape">
+              <img src="images/photography/organized/small/small_20250315_015_1210x805.jpg" alt="摄影作品">
+              <div class="photo-caption">作品015 - 2025年3月</div>
             </div>
           </div>
           
