@@ -1,0 +1,157 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Photography - Yixuan Yang</title>
+    <meta name="author" content="YxuanAr">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="images/favicon/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <style>
+      .photo-gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+        padding: 20px 0;
+      }
+      
+      .photo-item {
+        position: relative;
+        overflow: hidden;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease;
+      }
+      
+      .photo-item:hover {
+        transform: scale(1.02);
+      }
+      
+      .photo-item img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+      
+      .photo-caption {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(0,0,0,0.7);
+        color: white;
+        padding: 10px;
+        font-size: 14px;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+      
+      .photo-item:hover .photo-caption {
+        opacity: 1;
+      }
+      
+      .large-photo {
+        grid-column: span 2;
+      }
+      
+      .medium-photo {
+        grid-column: span 1;
+      }
+      
+      .small-photo {
+        grid-column: span 1;
+      }
+      
+      @media (max-width: 768px) {
+        .photo-gallery {
+          grid-template-columns: 1fr;
+        }
+        .large-photo, .medium-photo, .small-photo {
+          grid-column: span 1;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <table style="width:100%;max-width:1200px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+      <tr style="padding:0px">
+        <td style="padding:0px">
+          <!-- Header -->
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            <tr style="padding:0px">
+              <td style="padding:2.5%;width:100%;vertical-align:middle">
+                <p class="name" style="text-align: center;">
+                  <a href="index.html" style="text-decoration:none;color:inherit;">← Back to Home</a>
+                </p>
+                <h2 style="text-align: center;">Photography Portfolio</h2>
+                <p style="text-align:center">
+                  Here are some of my photography works. I enjoy capturing moments from different perspectives and exploring various photographic styles.
+                </p>
+              </td>
+            </tr>
+          </tbody></table>
+          
+          <!-- Photo Gallery -->
+          <div class="photo-gallery">
+            <!-- Large Photo -->
+            <div class="photo-item large-photo">
+              <img src="images/photography/photo1.jpg" alt="Photography 1">
+              <div class="photo-caption">Sunset at the Beach - 2024</div>
+            </div>
+            
+            <!-- Medium Photos -->
+            <div class="photo-item medium-photo">
+              <img src="images/photography/photo2.jpg" alt="Photography 2">
+              <div class="photo-caption">City Lights - 2024</div>
+            </div>
+            
+            <div class="photo-item medium-photo">
+              <img src="images/photography/photo3.jpg" alt="Photography 3">
+              <div class="photo-caption">Mountain View - 2024</div>
+            </div>
+            
+            <!-- Small Photos -->
+            <div class="photo-item small-photo">
+              <img src="images/photography/photo4.jpg" alt="Photography 4">
+              <div class="photo-caption">Street Photography - 2024</div>
+            </div>
+            
+            <div class="photo-item small-photo">
+              <img src="images/photography/photo5.jpg" alt="Photography 5">
+              <div class="photo-caption">Nature Close-up - 2024</div>
+            </div>
+            
+            <div class="photo-item small-photo">
+              <img src="images/photography/photo6.jpg" alt="Photography 6">
+              <div class="photo-caption">Architecture - 2024</div>
+            </div>
+            
+            <!-- Mixed Layout -->
+            <div class="photo-item large-photo">
+              <img src="images/photography/photo7.jpg" alt="Photography 7">
+              <div class="photo-caption">Landscape Panorama - 2024</div>
+            </div>
+            
+            <div class="photo-item small-photo">
+              <img src="images/photography/photo8.jpg" alt="Photography 8">
+              <div class="photo-caption">Portrait - 2024</div>
+            </div>
+          </div>
+          
+          <!-- Footer -->
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            <tr>
+              <td style="padding:0px">
+                <br>
+                <p style="text-align:center;font-size:small;">
+                  <a href="index.html">← Back to Home</a>
+                </p>
+              </td>
+            </tr>
+          </tbody></table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html> 
