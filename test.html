@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Pages 测试</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        .success {
+            color: #28a745;
+            font-weight: bold;
+        }
+        .info {
+            background-color: #e7f3ff;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎉 GitHub Pages 测试页面</h1>
+        <p class="success">如果您能看到这个页面，说明GitHub Pages已经成功启用！</p>
+        
+        <div class="info">
+            <h3>下一步操作：</h3>
+            <ol>
+                <li>删除这个测试文件</li>
+                <li>确保您的 <code>index.html</code> 文件在仓库根目录</li>
+                <li>访问 <a href="https://YxuanAr.github.io">https://YxuanAr.github.io</a> 查看您的主页</li>
+            </ol>
+        </div>
+        
+        <p><strong>当前时间：</strong> <span id="current-time"></span></p>
+    </div>
+    
+    <script>
+        document.getElementById('current-time').textContent = new Date().toLocaleString('zh-CN');
+    </script>
+</body>
+</html> 
