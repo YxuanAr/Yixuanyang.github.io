@@ -13,15 +13,17 @@
   </head>
 
   <body>
-    <button id="toggle-theme" style="position:fixed;top:20px;right:20px;z-index:9999;padding:8px 16px;border-radius:6px;border:none;background:#222;color:#fff;cursor:pointer;">Background</button>
+    <button id="toggle-theme" style="position:fixed;top:20px;right:20px;z-index:9999;padding:8px;border-radius:50%;border:none;background:transparent;color:inherit;cursor:pointer;font-size:20px;width:40px;height:40px;display:flex;align-items:center;justify-content:center;transition:all 0.3s ease;">🌙</button>
     <script>
       function setTheme(dark) {
         if(dark) {
           document.body.style.background = '#000';
           document.body.style.color = '#fff';
+          document.getElementById('toggle-theme').innerHTML = '☀️';
         } else {
           document.body.style.background = '#fff';
           document.body.style.color = '#000';
+          document.getElementById('toggle-theme').innerHTML = '🌙';
         }
       }
       // 读取本地存储
@@ -43,19 +45,19 @@
                   Yixuan Yang
                 </p>
                 <p>
-                Hi there! My name is Yixuan Yang (杨翊玄, pronounced 'Yee-shwen Yang'). I am currently a Ph.D. candidate at <a href="https://warwick.ac.uk/fac/sci/dcs/">DCS, University of Warwick, UK</a>, supervised by <a href="https://www.dcs.warwick.ac.uk/~vsanchez/Victor_Sanchez/Victor_Sanchez.html">Prof. Victor Sanchez</a> and <a href="https://www.sustech.edu.cn/en/faculties/zhengfeng.html">Prof. Feng Zheng</a> (SUSTech, China). I received my Master degree in <a href="https://www.cse.cuhk.edu.hk/">Computer Science from School of Computer Science and Engineering, The Chinese University of Hong Kong (CUHK)</a> in 2020. Previously, I obtained my Bachelor's degree in the School of Computer Science in 2019 at Northwest University, Xi'an, China. Now, I am an intern at <a href="https://www.shlab.org.cn/"></a>Shanghai AI lab</a>, working on 3D scene generation and 3D reconstruction.
+                Hi there! My name is Yixuan Yang (杨翊玄, pronounced 'Yee-shwen Yang'). I am currently a Ph.D. candidate at <a href="https://warwick.ac.uk/fac/sci/dcs/">DCS, University of Warwick, UK</a>, supervised by <a href="https://www.dcs.warwick.ac.uk/~vsanchez/Victor_Sanchez/Victor_Sanchez.html">Prof. Victor Sanchez</a> and <a href="https://www.sustech.edu.cn/en/faculties/zhengfeng.html">Prof. Feng Zheng</a> (SUSTech, China). I received my Master degree at <a href="https://www.cse.cuhk.edu.hk/">CSE, The Chinese University of Hong Kong (CUHK)</a> in 2020. Previously, I obtained my Bachelor's degree in the School of Computer Science in 2019 at Northwest University, China. Now, I am an intern at <a href="https://www.shlab.org.cn/"></a>Shanghai AI lab</a>, working on 3D scene generation and 3D reconstruction.
                 </p>
                 <p>
-                  Besides, I am also a photography enthusiast, and I share some of my photography works at the bottom of this webpage. Also, I am a loyal Liverpool FC fan.
+                  Besides, I am also a photography enthusiast, I share some of my photography works in this <a href="photography.html">page</a>.
                 </p>
                 <p style="text-align:center">
                   <a href="mailto:arnoldyang97@gmail.com">Email</a> &nbsp;/&nbsp;
                   <a href="https://github.com/YxuanAr">Github</a> &nbsp;/&nbsp;
-                  <a href="photography.html">Photography</a>
+                  <a href="photography.html">Photo Gallery</a>
                 </p>
               </td>
               <td style="padding:2.5%;width:37%;max-width:37%">
-                <img style="width:100%;max-width:100%;object-fit: cover; border-radius: 50%;" alt="profile photo" src="https://via.placeholder.com/300x300/4A90E2/FFFFFF?text=YxuanAr" class="hoverZoomLink">
+                <img style="width:220px;max-width:100%;object-fit: cover; border-radius: 0;" alt="profile photo" src="images/ava.jpg" class="hoverZoomLink">
               </td>
             </tr>
           </tbody></table>
