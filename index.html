@@ -13,6 +13,26 @@
   </head>
 
   <body>
+    <button id="toggle-theme" style="position:fixed;top:20px;right:20px;z-index:9999;padding:8px 16px;border-radius:6px;border:none;background:#222;color:#fff;cursor:pointer;">Background</button>
+    <script>
+      function setTheme(dark) {
+        if(dark) {
+          document.body.style.background = '#000';
+          document.body.style.color = '#fff';
+        } else {
+          document.body.style.background = '#fff';
+          document.body.style.color = '#000';
+        }
+      }
+      // 读取本地存储
+      let dark = localStorage.getItem('theme_dark') === 'true';
+      setTheme(dark);
+      document.getElementById('toggle-theme').onclick = function() {
+        dark = !dark;
+        setTheme(dark);
+        localStorage.setItem('theme_dark', dark);
+      };
+    </script>
     <table style="width:100%;max-width:1000px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
       <tr style="padding:0px">
         <td style="padding:0px">
@@ -72,6 +92,27 @@
 
     <tr>
       <td style="padding:16px;width:20%;vertical-align:middle">
+        <img src="images/optiscene_title.jpg" alt="clean-usnob" width="160" height="160">
+      </td>
+      <td style="padding:8px;width:80%;vertical-align:middle">
+        <a href="https://arxiv.org/abs/2506.07570">
+          <span class="papertitle">OptiScene: LLM-driven Indoor Scene Layout Generation via Scaled Human-aligned Data Synthesis and Multi-Stage Preference Optimization</span>
+        </a>
+        <br>
+        <strong>Yixuan Yang<sup>*</sup></strong>, Zhen Luo<sup>*</sup>, Tongsheng Ding<sup>*</sup>, <a href="https://lujunru.github.io/pdf/En_resume.pdf">Junru Lu</a>, <a href="https://scholar.google.com/citations?user=iq5N7JgAAAAJ&hl=en">Jinyu Yang</a>, <a href="https://mingqigao.com">Mingqi Gao</a> <a href="https://www.dcs.warwick.ac.uk/~vsanchez/Victor_Sanchez/Victor_Sanchez.html">Victor Sanchez</a>, <a href="https://www.sustech.edu.cn/en/faculties/zhengfeng.html">Feng Zheng</a>
+        <br>
+        <span style="font-size:small;">* Equal contribution</span>
+        <br>
+        <br>        <!-- <em>2025 IEEE International Conference on Intelligent Robots and Systems <b>(IROS 2025)</b></em> -->
+        <a href="https://arxiv.org/abs/2506.07570">arxiv</a>
+        /
+        <a href="https://polysummit.github.io/optiscene.github.io/">project page</a>
+        <p>We introduce a new large 3D synthetic indoor layout dataset 3D-SynthPlace and introduce LLM-based Optiscene with two-stage DPO to generate new 3D layout scene.</p>
+      </td>
+    </tr>
+
+    <tr>
+      <td style="padding:16px;width:20%;vertical-align:middle">
         <img src="images/llplace_title.png" alt="clean-usnob" width="160" height="160">
       </td>
       <td style="padding:8px;width:80%;vertical-align:middle">
@@ -82,6 +123,7 @@
         <strong>Yixuan Yang</strong>, <a href="https://lujunru.github.io/pdf/En_resume.pdf">Junru Lu</a>, <a href="https://zhaozixiang1228.github.io/">Zixiang Zhao</a>, Zhen Luo, Wanxi Dong, <a href="https://www.dcs.warwick.ac.uk/~vsanchez/Victor_Sanchez/Victor_Sanchez.html">Victor Sanchez</a>, <a href="https://www.sustech.edu.cn/en/faculties/zhengfeng.html">Feng Zheng</a>
         <br>
         <em>2025 IEEE International Conference on Intelligent Robots and Systems <b>(IROS 2025)</b></em>
+        <br>
         <br>
         <a href="https://arxiv.org/abs/2406.03866">paper</a>
         <p>We use LLMs to generate and edit the 3D indoor scene layout.</p>
@@ -101,184 +143,31 @@
         <br>
         <em>IEEE Transactions on Multimedia <b>(TMM)</b></em>
         <br>
+        <br>
         <a href="https://arxiv.org/pdf/2504.13788">paper</a>
         <p>We apply the reference-guided generation to guide the unpaired point cloud completion.</p>
       </td>
     </tr>
-    <tr onmouseout="bolt3d_stop()" onmouseover="bolt3d_start()">
+  
+    <tr>
       <td style="padding:16px;width:20%;vertical-align:middle">
-        <div class="one">
-          <div class="two" id='bolt3d_image'><video  width=100% height=100% muted autoplay loop>
-          <source src="images/bolt3d.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-
-          </video></div>
-          <img src='images/bolt3d.jpg' width="160">
-        </div>
-        <script type="text/javascript">
-          function bolt3d_start() {
-            document.getElementById('bolt3d_image').style.opacity = "1";
-          }
-
-          function bolt3d_stop() {
-            document.getElementById('bolt3d_image').style.opacity = "0";
-          }
-          bolt3d_stop()
-        </script>
+        <img src="images/video_title.jpg" alt="clean-usnob" width="160" height="160">
       </td>
       <td style="padding:8px;width:80%;vertical-align:middle">
-        <a href="https://szymanowiczs.github.io/bolt3d">
-          <span class="papertitle">Bolt3D: Generating 3D Scenes in Seconds</span>
+        <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=10794594">
+          <span class="papertitle">Advancing Video Anomaly Detection:
+            A Bi-Directional Hybrid Framework for Enhanced Single- and Multi-Task Approaches</span>
         </a>
         <br>
-        <a href="https://szymanowiczs.github.io/">Stanislaw Szymanowicz</a>,
-        <a href="https://jasonyzhang.com">Jason Y. Zhang</a>,
-        <a href="https://pratulsrinivasan.github.io">Pratul Srinivasan</a>,
-        <a href="https://ruiqigao.github.io">Ruiqi Gao</a>,
-        <a href="https://github.com/ArthurBrussee">Arthur Brussee</a>,
-        <a href="https://holynski.org">Aleksander Holynski</a>,
-        <a href="https://ricardomartinbrualla.com">Ricardo Martin-Brualla</a>,
-		<strong>Jonathan T. Barron</strong>,
-        <a href="https://henzler.github.io">Philipp Henzler</a>
+        <a href="https://scholar.google.com/citations?user=B-BdidkAAAAJ&hl=en">Guodong Shen</a>, <a href="https://scholar.google.com/citations?user=B-BdidkAAAAJ&hl=en">Yuqi Ouyang</a>, <a href="https://lujunru.github.io/pdf/En_resume.pdf">Junru Lu</a>, <strong>Yixuan Yang</strong>, <a href="https://www.dcs.warwick.ac.uk/~vsanchez/Victor_Sanchez/Victor_Sanchez.html">Victor Sanchez</a>
         <br>
-        <em>arXiv</em>, 2025
+        <em>IEEE Transactions on Image Processing <b>(TIP)</b></em>
         <br>
-        <a href="https://szymanowiczs.github.io/bolt3d">project page</a>
-        /
-        <a href="https://szymanowiczs.github.io/bolt3d">arXiv</a>
-        <p></p>
-        <p>
-		By training a latent diffusion model to directly output 3D Gaussians we enable fast (~6 seconds on a single GPU) feed-forward 3D scene generation.
-        </p>
+        <br>
+        <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=10794594">paper</a>
+        <p>We introduce a bi-directional hybrid framework to detect anomaly frames of the video.</p>
       </td>
     </tr>
-
-    <tr onmouseout="cat4d_stop()" onmouseover="cat4d_start()" bgcolor="#ffffd0">
-      <td style="padding:16px;width:20%;vertical-align:middle">
-        <div class="one">
-          <div class="two" id='cat4d_image'><video  width=100% height=100% muted autoplay loop>
-          <source src="images/cat4d.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-          </video></div>
-          <img src='images/cat4d.jpg' width="160">
-        </div>
-        <script type="text/javascript">
-          function cat4d_start() {
-            document.getElementById('cat4d_image').style.opacity = "1";
-          }
-
-          function cat4d_stop() {
-            document.getElementById('cat4d_image').style.opacity = "0";
-          }
-          cat4d_stop()
-        </script>
-      </td>
-      <td style="padding:8px;width:80%;vertical-align:middle">
-        <a href="https://cat-4d.github.io/">
-			<span class="papertitle">CAT4D: Create Anything in 4D with Multi-View Video Diffusion Models
-</span>
-        </a>
-        <br>
-				<a href="https://www.cs.columbia.edu/~rundi/">Rundi Wu</a>,
-				<a href="https://ruiqigao.github.io/">Ruiqi Gao</a>,
-				<a href="https://poolio.github.io/">Ben Poole</a>,
-				<a href="https://alextrevithick.github.io/">Alex Trevithick</a>,
-				<a href="https://www.cs.columbia.edu/~cxz/index.htm/">Changxi Zheng</a>,
-				<strong>Jonathan T. Barron</strong>,
-				<a href="https://holynski.org/">Aleksander Holynski</a>
-        <br>
-        <em>CVPR</em>, 2025 &nbsp <font color="red"><strong>(Oral Presentation)</strong></font>
-        <br>
-        <a href="https://cat-4d.github.io/">project page</a>
-        /
-        <a href="https://arxiv.org/abs/2411.18613">arXiv</a>
-        <p></p>
-        <p>
-				An approach for turning a video into a 4D radiance field that can be rendered in real-time. When combined with a text-to-video model, this enables text-to-4D.
-        </p>
-      </td>
-    </tr>
-	
-
-    <tr onmouseout="r2r_stop()" onmouseover="r2r_start()">
-      <td style="padding:16px;width:20%;vertical-align:middle">
-        <div class="one">
-          <div class="two" id='r2r_image'><video  width=100% muted autoplay loop>
-          <source src="images/r2r.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-          </video></div>
-          <img src='images/r2r.jpg' width=100%>
-        </div>
-        <script type="text/javascript">
-          function r2r_start() {
-            document.getElementById('r2r_image').style.opacity = "1";
-          }
-
-          function r2r_stop() {
-            document.getElementById('r2r_image').style.opacity = "0";
-          }
-          r2r_stop()
-        </script>
-      </td>
-      <td style="padding:8px;width:80%;vertical-align:middle">
-        <a href="https://relight-to-reconstruct.github.io/">
-          <span class="papertitle">Generative Multiview Relighting for
-3D Reconstruction under Extreme Illumination Variation</span>
-        </a>
-        <br>
-        <a href="https://hadizayer.github.io/">Hadi Alzayer</a>,
-        <a href="https://henzler.github.io/">Philipp Henzler</a>,
-				<strong>Jonathan T. Barron</strong>, 
-        <a href="https://jbhuang0604.github.io/">Jia-Bin Huang</a>,
-        <a href="https://pratulsrinivasan.github.io/">Pratul P. Srinivasan</a>, 
-        <a href="https://dorverbin.github.io/">Dor Verbin</a>
-        <br>
-        <em>CVPR</em>, 2025 &nbsp <font color=#FF8080><strong>(Highlight)</strong></font>
-        <br>
-        <a href="https://relight-to-reconstruct.github.io/">project page</a>
-        /
-        <a href="https://arxiv.org/abs/2412.15211">arXiv</a>
-        <p></p>
-        <p>
-				Images taken under extreme illumination variation can be made consistent with diffusion, and this enables high-quality 3D reconstruction.
-                </p>
-              </td>
-            </tr>
-
-
-
-            <tr>
-              <td style="padding:16px;width:20%;vertical-align:middle">
-                <img src="images/bd_promo.jpg" alt="blind-date" width="160" height="160">
-              </td>
-              <td style="padding:8px;width:80%;vertical-align:middle">
-                <a href="https://drive.google.com/file/d/1PQjzKgFcrAesMIDJr-WDlCwuGUxZJZwO/view?usp=sharing">
-                  <span class="papertitle">Blind Date: Using Proper Motions to Determine the Ages of Historical Images</span>
-                </a>
-                <br>
-                <strong>Jonathan T. Barron</strong>, <a href="http://cosmo.nyu.edu/hogg/">David W. Hogg</a>, <a href="http://www.astro.princeton.edu/~dstn/">Dustin Lang</a>, <a href="http://cs.nyu.edu/~roweis/">Sam Roweis</a>
-                <br>
-                <em>The Astronomical Journal</em>, 136, 2008
-                <p>Using the relative motions of stars we can accurately estimate the date of origin of historical astronomical images.</p>
-              </td>
-            </tr>
-
-            <tr>
-              <td style="padding:16px;width:20%;vertical-align:middle">
-                <img src="images/clean_promo.jpg" alt="clean-usnob" width="160" height="160">
-              </td>
-              <td style="padding:8px;width:80%;vertical-align:middle">
-                <a href="https://drive.google.com/file/d/1YvRx-4hrZoCk-nl6OgVJZlHAqOiN5hWq/view?usp=sharing">
-                  <span class="papertitle">Cleaning the USNO-B Catalog Through Automatic Detection of Optical Artifacts</span>
-                </a>
-                <br>
-                <strong>Jonathan T. Barron</strong>, <a href="http://stumm.ca/">Christopher Stumm</a>, <a href="http://cosmo.nyu.edu/hogg/">David W. Hogg</a>, <a href="http://www.astro.princeton.edu/~dstn/">Dustin Lang</a>, <a href="http://cs.nyu.edu/~roweis/">Sam Roweis</a>
-                <br>
-                <em>The Astronomical Journal</em>, 135, 2008
-                <p>We use computer vision techniques to identify and remove diffraction spikes and reflection halos in the USNO-B Catalog.</p>
-                <p>In use at <a href="http://www.astrometry.net">Astrometry.net</a></p>
-              </td>
-            </tr>
 
           </tbody></table>
 
